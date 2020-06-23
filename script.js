@@ -32,7 +32,7 @@ var startQuiz = document.querySelector("#start");
 var q = document.getElementById("question").textContent;
 var answered = document.getElementById("possibleAnswers");
 
-
+//Start quiz button
 startQuiz.addEventListener("click", function(){
     event.preventDefault();
     console.log("Start Quiz");
@@ -48,9 +48,21 @@ answered.addEventListener("click", function(){
     // console.log(event.target.textContent);
     // console.log(correct[i]);
     if (event.target.textContent === correct[i]){
-        alert("Correct");
+        document.getElementById("numberQuestion").classList.add("right");
+        document.getElementById("clock").classList.add("right1");
+
+        setTimeout(function(){
+            document.getElementById("numberQuestion").classList.remove("right");
+            document.getElementById("clock").classList.remove("right1");
+        },500)
     } else {
-        alert("Incorrect");
+        document.getElementById("numberQuestion").classList.add("wrong");
+        document.getElementById("clock").classList.add("wrong1");
+
+        setTimeout(function(){
+            document.getElementById("numberQuestion").classList.remove("wrong");
+            document.getElementById("clock").classList.remove("wrong1");
+        },500)
     }
     question();
 })
@@ -68,7 +80,8 @@ function question(){
     return i;
 }
 
-var seconds = 
-function timer(){
 
+
+function timer(){
+console.log("Start timer");
 }

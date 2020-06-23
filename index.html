@@ -39,8 +39,6 @@
       #clock{
         max-width: 250px;
         margin: 0 auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
       }
       .card-text{
         font-size: 28px;  
@@ -56,6 +54,17 @@
         background-color: #007bff;
         color: #fff;
       }
+      .wrong{
+        background-color: red;
+      }
+      .right{
+        background-color: green;
+      }.wrong1{
+        color: red!important;
+      }
+      .right1{
+        color: green!important;
+      }
     </style>
   </head>
 <body>
@@ -64,6 +73,9 @@
       <a class="navbar-brand" href="index.html">Coding Quiz</a>
       <a class="navbar-brand" href="highScores.html">High Scores</a>
       <a class="navbar-brand" href="about.html">About</a>
+      
+      <!--Timer-->
+      <h1 id="clock" class="hide navbar-brand">Timer: <span> 00.00</span></h1>
   </nav>
     
       <!--Main Body Content-->
