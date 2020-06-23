@@ -22,6 +22,12 @@ var answerArrayD = [
     "After the last 'HTML' tag"
 ]
 
+var correct = [
+    "Cascading Style Sheets",
+    "At the bottom of the 'body' tag"
+]
+
+
 var startQuiz = document.querySelector("#start");
 var q = document.getElementById("question").textContent;
 var answered = document.getElementById("possibleAnswers");
@@ -34,18 +40,35 @@ startQuiz.addEventListener("click", function(){
     document.getElementById("startDiv").classList.add("hide");
     document.getElementById("clock").classList.remove("hide");
     question();
+    timer();
 });
 
 answered.addEventListener("click", function(){
+    // console.log("clicked")
+    // console.log(event.target.textContent);
+    // console.log(correct[i]);
+    if (event.target.textContent === correct[i]){
+        alert("Correct");
+    } else {
+        alert("Incorrect");
+    }
     question();
 })
 
+var i = -1;
+
 function question(){
-    var i = -1;
     i++;
     document.getElementById("question").innerHTML=questionArray[i];
-    document.getElementById("a").textContent=" "+answerArrayA[i];
-    document.getElementById("b").textContent=" "+answerArrayB[i];
-    document.getElementById("c").textContent=" "+answerArrayC[i];
-    document.getElementById("d").textContent=" "+answerArrayD[i];
+    document.getElementById("a").textContent=""+answerArrayA[i];
+    document.getElementById("b").textContent=""+answerArrayB[i];
+    document.getElementById("c").textContent=""+answerArrayC[i];
+    document.getElementById("d").textContent=""+answerArrayD[i];
+    document.getElementById("numberQuestion").textContent="Question # "+(i+1);
+    return i;
+}
+
+var seconds = 
+function timer(){
+
 }

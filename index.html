@@ -49,6 +49,13 @@
         margin: 0 auto;
         margin-top: 20px;
       }
+      .text-center{
+        float: inline-end;
+      }
+      .list-group-item:hover{
+        background-color: #007bff;
+        color: #fff;
+      }
     </style>
   </head>
 <body>
@@ -59,17 +66,6 @@
       <a class="navbar-brand" href="about.html">About</a>
   </nav>
     
-  <!--Timer-->
-  <div class="card text-center hide" id="clock">
-    <div class="card-header">
-      Time left
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Seconds</h5>
-      <p class="card-text">00.00</p>
-    </div>
-  </div>
-
       <!--Main Body Content-->
       <div class="container">
         <div class="col-lg-10">
@@ -90,15 +86,27 @@
             
             <!--Answers-->
             <ul id="possibleAnswers" class="list-group list-group-flush">
-              <li class="list-group-item"><button type="button" class="btn btn-primary">A</button><span id="a"> Answer number one</span></li>
-              <li class="list-group-item"><button type="button" class="btn btn-primary">B</button><span id="b"> Answer number two</span></li>
-              <li class="list-group-item"><button type="button" class="btn btn-primary">C</button><span id="c"> Answer number three</span></li>
-              <li class="list-group-item"><button type="button" class="btn btn-primary">D</button><span id="d"> Answer number four</span></li>
+              <li class="list-group-item"><span id="a"> Answer number one</span></li>
+              <li class="list-group-item"><span id="b"> Answer number two</span></li>
+              <li class="list-group-item"><span id="c"> Answer number three</span></li>
+              <li class="list-group-item"><span id="d"> Answer number four</span></li>
             </ul>
           </div>
 
         </div>
       </div>
+
+      <!--Timer-->
+  <div class="card text-center hide" id="clock">
+    <div class="card-header">
+      Time left
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Seconds</h5>
+      <p class="card-text">00.00</p>
+    </div>
+  </div>
+
       <script src="script.js"></script>
 </body>
 </html>
