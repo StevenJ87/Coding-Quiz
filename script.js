@@ -3,7 +3,9 @@ var questionArray = [
     "Where does a js script tag go in an HTML file",
     "How much will 'i' increase by with ++",
     "The CSS attribute 'color' changes what in a tag",
-    "How are 'id' tags presented in CSS"
+    "How are 'id' tags presented in CSS",
+    "What does 'px' stand for when sizing",
+    "What is bootstrap"
 ] 
 
 var answerArrayA = [
@@ -11,14 +13,18 @@ var answerArrayA = [
     "In the head tag",
     "2",
     "text color",
-    "With a ' . '"
+    "With a ' . '",
+    "Pixels",
+    "A website for javascript"
 ]
 var answerArrayB= [
     "Cascading Style Sheets",
     "At the top of the 'body' tag",
     "1",
     "background color",
-    "With ' id '"
+    "With ' id '",
+    "Pictures",
+    "A website for designer boots"
 ]
 
 var answerArrayC = [
@@ -26,7 +32,9 @@ var answerArrayC = [
     "At the bottom of the 'body' tag",
     "0",
     "border color",
-    "Nothing"
+    "Nothing",
+    "Per X-axis",
+    "designer boots"
 ]
 
 var answerArrayD = [
@@ -34,7 +42,9 @@ var answerArrayD = [
     "After the last 'HTML' tag",
     "It doubles",
     "highlight color",
-    "With ' # '"
+    "With ' # '",
+    "pixies",
+    "A website for CSS"
 ]
 
 var correct = [
@@ -42,7 +52,9 @@ var correct = [
     "At the bottom of the 'body' tag",
     "1",
     "text color",
-    "With ' # '"
+    "With ' # '",
+    "Pixels",
+    "A website for CSS"
 ]
 
 var highScores = {
@@ -56,6 +68,28 @@ var answered = document.getElementById("possibleAnswers");
 var seconds = document.getElementById("countdown");
 var points = document.getElementById("score");
 var submit = document.getElementById("submit");
+var name1 = document.getElementById("name1");
+var name2 = document.getElementById("name2");
+var name3 = document.getElementById("name3");
+var name4 = document.getElementById("name4");
+var name5 = document.getElementById("name5");
+var name6 = document.getElementById("name6");
+var name7 = document.getElementById("name7");
+var name8 = document.getElementById("name8");
+var name9 = document.getElementById("name9");
+var name10 = document.getElementById("score10");
+var score1 = document.getElementById("score1");
+var score2 = document.getElementById("score2");
+var score3 = document.getElementById("score3");
+var score4 = document.getElementById("score4");
+var score5 = document.getElementById("score5");
+var score6 = document.getElementById("score6");
+var score7 = document.getElementById("score7");
+var score8 = document.getElementById("score8");
+var score9 = document.getElementById("score9");
+var score10 = document.getElementById("score10");
+
+//renderScores();
 
 //Start quiz button
 startQuiz.addEventListener("click", function(){
@@ -146,11 +180,20 @@ seconds.textContent = left;
 
 function setHighScore(){
 points.textContent = " " +left
+console.log(points.textContent);
+return points.textContent
 }
 
+
 submit.addEventListener("click",function(){
-    var name = document.getElementById("initials").value;
-    highScores.score.push(left);
-    highScores.initials.push(name);
-    localStorage.setItem.JSON.st
-})
+    var finalScore = points.textContent;
+     var user = JSON.parse(localStorage.getItem('user'));
+     var highScores = user;
+//     var name = document.getElementById("initials").value;
+     highScores.score.push(finalScore);
+     highScores.initials.push(name);
+     localStorage.setItem('user',JSON.stringify(highScores));
+//     console.log(highScores);
+//     //renderScores();
+//     return highScores
+ })
