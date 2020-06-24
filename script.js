@@ -57,10 +57,6 @@ var correct = [
     "A website for CSS"
 ]
 
-var highScores = {
-    initials:[],
-    score:[]
-};
 
 var startQuiz = document.querySelector("#start");
 var q = document.getElementById("question").textContent;
@@ -68,26 +64,6 @@ var answered = document.getElementById("possibleAnswers");
 var seconds = document.getElementById("countdown");
 var points = document.getElementById("score");
 var submit = document.getElementById("submit");
-var name1 = document.getElementById("name1");
-var name2 = document.getElementById("name2");
-var name3 = document.getElementById("name3");
-var name4 = document.getElementById("name4");
-var name5 = document.getElementById("name5");
-var name6 = document.getElementById("name6");
-var name7 = document.getElementById("name7");
-var name8 = document.getElementById("name8");
-var name9 = document.getElementById("name9");
-var name10 = document.getElementById("score10");
-var score1 = document.getElementById("score1");
-var score2 = document.getElementById("score2");
-var score3 = document.getElementById("score3");
-var score4 = document.getElementById("score4");
-var score5 = document.getElementById("score5");
-var score6 = document.getElementById("score6");
-var score7 = document.getElementById("score7");
-var score8 = document.getElementById("score8");
-var score9 = document.getElementById("score9");
-var score10 = document.getElementById("score10");
 
 //renderScores();
 
@@ -179,21 +155,15 @@ seconds.textContent = left;
 }
 
 function setHighScore(){
-points.textContent = " " +left
+points.textContent =left
 console.log(points.textContent);
-return points.textContent
+return left;
 }
 
+var highScores = [];
 
 submit.addEventListener("click",function(){
-    var finalScore = points.textContent;
-     var user = JSON.parse(localStorage.getItem('user'));
-     var highScores = user;
-//     var name = document.getElementById("initials").value;
-     highScores.score.push(finalScore);
-     highScores.initials.push(name);
+    console.log(points.textContent);
+     highScores.push(points.textContent);
      localStorage.setItem('user',JSON.stringify(highScores));
-//     console.log(highScores);
-//     //renderScores();
-//     return highScores
  })
