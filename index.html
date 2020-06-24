@@ -50,7 +50,7 @@
       .text-center{
         float: inline-end;
       }
-      .list-group-item:hover{
+      .hoover:hover{
         background-color: #007bff;
         color: #fff;
       }
@@ -75,7 +75,7 @@
       <a class="navbar-brand" href="about.html">About</a>
       
       <!--Timer-->
-      <h1 id="clock" class="hide navbar-brand">Timer: <span> 00.00</span></h1>
+      <h1 id="clock" class="hide navbar-brand">Timer: <span id="countdown"> 60</span></h1>
   </nav>
     
       <!--Main Body Content-->
@@ -98,11 +98,23 @@
             
             <!--Answers-->
             <ul id="possibleAnswers" class="list-group list-group-flush">
-              <li class="list-group-item"><span id="a"> Answer number one</span></li>
-              <li class="list-group-item"><span id="b"> Answer number two</span></li>
-              <li class="list-group-item"><span id="c"> Answer number three</span></li>
-              <li class="list-group-item"><span id="d"> Answer number four</span></li>
+              <li class="list-group-item hoover"><span id="a"> Answer number one</span></li>
+              <li class="list-group-item hoover"><span id="b"> Answer number two</span></li>
+              <li class="list-group-item hoover"><span id="c"> Answer number three</span></li>
+              <li class="list-group-item hoover"><span id="d"> Answer number four</span></li>
             </ul>
+          </div>
+
+          <!--High Score Card-->
+          <div id="scoreDiv" class="card mb-3 hide">
+            <h3 id="highScore"  class="card-header">New High Score!!</h3>
+            
+            <!--High Score Input-->
+            <ul id="enter" class="list-group list-group-flush">
+              <li class="list-group-item">Initials <Input id="initials"></Input></li>
+              <li class="list-group-item">Score<span id="score"></span></li>
+            </ul>
+            <button id="submit" type="button" class="btn btn-primary">Submit</button>
           </div>
 
         </div>
