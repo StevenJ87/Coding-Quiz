@@ -45,12 +45,17 @@ var correct = [
     "With ' # '"
 ]
 
+var highScores = {
+    initials:[],
+    score:[]
+};
 
 var startQuiz = document.querySelector("#start");
 var q = document.getElementById("question").textContent;
 var answered = document.getElementById("possibleAnswers");
-var seconds = document.getElementById("countdown")
-
+var seconds = document.getElementById("countdown");
+var points = document.getElementById("score");
+var submit = document.getElementById("submit");
 
 //Start quiz button
 startQuiz.addEventListener("click", function(){
@@ -73,28 +78,37 @@ answered.addEventListener("click", function(){
         //Pause Time
         //Enter High Score
         document.getElementById("scoreDiv").classList.remove("hide");
+        setHighScore();
 
     } else{
 
     if (event.target.textContent === correct[i]){
         document.getElementById("numberQuestion").classList.add("right");
         document.getElementById("clock").classList.add("right1");
+        document.getElementById("secondsRight").classList.add("right1");
+        document.getElementById("secondsRight").classList.remove("hide");
         secondsElapsed= secondsElapsed - 5;
 
         setTimeout(function(){
             document.getElementById("numberQuestion").classList.remove("right");
             document.getElementById("clock").classList.remove("right1");
+            document.getElementById("secondsRight").classList.remove("right1");
+            document.getElementById("secondsRight").classList.add("hide");
             question();
         },500)
     } else {
         document.getElementById("numberQuestion").classList.add("wrong");
         document.getElementById("clock").classList.add("wrong1");
+        document.getElementById("secondsWrong").classList.add("wrong1");
+        document.getElementById("secondsWrong").classList.remove("hide");
         secondsElapsed= secondsElapsed + 10;
         
         
         setTimeout(function(){
             document.getElementById("numberQuestion").classList.remove("wrong");
             document.getElementById("clock").classList.remove("wrong1");
+            document.getElementById("secondsWrong").classList.remove("wrong1");
+        document.getElementById("secondsWrong").classList.add("hide");
             question();
         },500);
     }
@@ -129,3 +143,14 @@ return left
 function renderTime(){
 seconds.textContent = left;
 }
+
+function setHighScore(){
+points.textContent = " " +left
+}
+
+submit.addEventListener("click",function(){
+    var name = document.getElementById("initials").value;
+    highScores.score.push(left);
+    highScores.initials.push(name);
+    localStorage.setItem.JSON.st
+})
