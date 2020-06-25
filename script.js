@@ -59,11 +59,12 @@ var correct = [
 
 
 var startQuiz = document.querySelector("#start");
-var q = document.getElementById("question").textContent;
+
 var answered = document.getElementById("possibleAnswers");
 var seconds = document.getElementById("countdown");
 var points = document.getElementById("score");
 var submit = document.getElementById("submit");
+var initials = document.getElementById("initials");
 
 //renderScores();
 
@@ -85,7 +86,6 @@ answered.addEventListener("click", function(){
 
         document.getElementById("questionDiv").classList.add("hide");
         document.getElementById("clock").classList.add("hide");
-        //Pause Time
         //Enter High Score
         document.getElementById("scoreDiv").classList.remove("hide");
         setHighScore();
@@ -156,14 +156,20 @@ seconds.textContent = left;
 
 function setHighScore(){
 points.textContent =left
-console.log(points.textContent);
 return left;
 }
 
-var highScores = [];
 
 submit.addEventListener("click",function(){
-    console.log(points.textContent);
-     highScores.push(points.textContent);
-     localStorage.setItem('user',JSON.stringify(highScores));
+    //highScores.push({Initials: initials.value, Score: points.textContent});
+    var highScores = [];
+    highScores.push(points.textContent);
+    localStorage.setItem('user',JSON.stringify(highScores));
+    document.getElementById("scoreDiv").classList.add("hide");
+    document.getElementById("thanks").classList.remove("hide");
  })
+
+ function setScores(){
+    var user = JSON.parse(localStorage.getItem('user'));
+    highScores = user;
+ }
